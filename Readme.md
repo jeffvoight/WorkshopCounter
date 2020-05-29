@@ -10,7 +10,9 @@ that I have seen in production *many* times.
 Links:
 
 https://visualvm.github.io/download.html
+
 https://visualvm.github.io/gettingstarted.html
+
 Plugins: Startup
 
 -agentpath:C:/visualvm_202/visualvm/lib/deployed/jdk16/windows-amd64/profilerinterface.dll=C:\visualvm_202\visualvm\lib,5140
