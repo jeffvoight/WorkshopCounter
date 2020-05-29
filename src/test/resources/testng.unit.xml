@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Unit Suite" verbose="1">
+    <groups>
+        <run>
+            <exclude name="wip"/>
+        </run>
+    </groups>
+    <listeners>
+        <listener class-name="com.coveros.voight.workshops.counter.listeners.SuiteListener"/>
+        <listener class-name="com.coveros.voight.workshops.counter.listeners.TestListener"/>
+    </listeners>
+    <test name="Regression">
+        <packages>
+            <package name="com.coveros.voight.workshops.counter.*"/>
+        </packages>
+    </test>
+</suite>
