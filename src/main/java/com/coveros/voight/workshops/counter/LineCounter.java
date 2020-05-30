@@ -2,7 +2,7 @@ package com.coveros.voight.workshops.counter;
 
 import java.util.Iterator;
 
-public class LineCounter extends Counter {
+public class LineCounter extends Counter implements Comparable {
     private final FileContents fileContents;
 
     public LineCounter(FileContents contents){
@@ -18,5 +18,12 @@ public class LineCounter extends Counter {
             itemCount++;
         }
         return itemCount;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Integer cc = ((Counter)o).countItems();
+        Integer lc = this.countItems();
+        return lc.compareTo(cc);
     }
 }
