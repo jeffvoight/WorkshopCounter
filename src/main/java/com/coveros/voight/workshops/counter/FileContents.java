@@ -17,8 +17,9 @@ public class FileContents {
     public FileContents(File f){
         fname = f.getName();
         int i=0;
+        BufferedReader buff = null;
         try {
-            BufferedReader buff = new BufferedReader(new FileReader(f));
+            buff = new BufferedReader(new FileReader(f));
             while(buff.ready()){
                 String theLine = buff.readLine();
                 theLines[i++] = theLine;
@@ -28,6 +29,14 @@ public class FileContents {
             System.err.println("Couldn't find the file!");
         } catch (IOException e) {
             System.err.println("IO Error in file " + e.getMessage());
+        } finally {
+            try {
+                if(buff != null) {
+                    buff.close();
+                }
+            } catch (IOException ioe){
+                System.err.println("IOError.");
+            }
         }
     }
 
@@ -45,6 +54,7 @@ public class FileContents {
                 }
 
                 @Override
+                @SuppressWarnings("squid:S2272")
                 public Object next() {
                     return null;
                 }
