@@ -2,3 +2,9 @@
 *.iml
 # Project exclude paths
 /target/
+
+.project
+nbactions.xml
+.classpath
+.settings
+.vscode
