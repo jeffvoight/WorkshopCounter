@@ -1,5 +1,9 @@
 package com.coveros.voight.workshops.counter;
 
+import com.coveros.voight.workshops.counter.counters.LineCounter;
+import com.coveros.voight.workshops.counter.counters.ParagraphCounter;
+import com.coveros.voight.workshops.counter.counters.RegexCounter;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.Arrays;
@@ -33,7 +37,7 @@ public class Main {
         Arrays.sort(lineCounterArray); // Sort by number of lines
 
         for(int i = 0; i < files.length; i++){
-            System.out.println(lineCounterArray[i].getName() + " is " + lineCounterArray[i].countItems() + " lines long.");
+            System.out.println(lineCounterArray[i].getName() + " is " + lineCounterArray[i].getCount() + " lines long.");
         }
 
     }

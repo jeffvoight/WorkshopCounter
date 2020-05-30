@@ -1,4 +1,4 @@
-package com.coveros.voight.workshops.counter;
+package com.coveros.voight.workshops.counter.counters;
 
 /**
  * This is the Counter class. It keeps track of how many 'things'

@@ -1,4 +1,6 @@
-package com.coveros.voight.workshops.counter;
+package com.coveros.voight.workshops.counter.counters;
+
+import com.coveros.voight.workshops.counter.FileContents;
 
 import java.util.Iterator;
 

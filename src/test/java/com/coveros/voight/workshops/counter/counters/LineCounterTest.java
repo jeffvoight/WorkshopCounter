@@ -1,11 +1,11 @@
-package com.coveros.voight.workshops.counter;
+package com.coveros.voight.workshops.counter.counters;
 
+import com.coveros.voight.workshops.counter.FileContents;
+import com.coveros.voight.workshops.counter.counters.LineCounter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
-
-import static org.mockito.Mockito.when;
 
 /**
  * There's are intentionally corrupt tests in here.
@@ -18,7 +18,7 @@ public class LineCounterTest {
 
     @Test
     public void testCountItems() {
-        Assert.assertEquals(lc2.countItems(), 2);
+        Assert.assertEquals(lc2.getCount(), 2);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class LineCounterTest {
 
     @Test
     public void testGetCount() {
-        Assert.assertEquals(lc2.countItems(), 2);
+        Assert.assertEquals(lc2.getCount(), 2);
     }
 
 }

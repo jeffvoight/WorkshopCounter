@@ -1,5 +1,6 @@
-package com.coveros.voight.workshops.counter;
+package com.coveros.voight.workshops.counter.counters;
 
+import com.coveros.voight.workshops.counter.counters.Counter;
 import org.mockito.Mockito;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;

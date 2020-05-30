@@ -1,12 +1,18 @@
-package com.coveros.voight.workshops.counter;
+package com.coveros.voight.workshops.counter.counters;
+
+import com.coveros.voight.workshops.counter.FileContents;
 
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class ParagraphCounter extends Counter {
+public class RegexCounter extends Counter {
     private final FileContents fileContents;
+    private final Pattern pattern;
 
-    public ParagraphCounter(FileContents fc){
+    public RegexCounter(FileContents fc, Pattern pattern) {
         this.fileContents = fc;
+        this.pattern = pattern;
     }
 
     @Override
@@ -15,7 +21,9 @@ public class ParagraphCounter extends Counter {
         int itemCount = 0;
         while(it.hasNext()){
             String line = (String)it.next();
-            if(line.equals("")) {
+            Matcher m = pattern.matcher(line);
+            int prevStart = 0;
+            if(m.find(prevStart)) {
                 itemCount++;
             }
         }
