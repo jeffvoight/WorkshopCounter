@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class FileContents {
     private int lines = -1;
-    private final String[] theLines = new String[100000];
+    private final String[] theLines = new String[10000];
     private final String fname;
 
     /**
@@ -31,6 +31,10 @@ public class FileContents {
         }
     }
 
+    /**
+     * I don't want to spoil any surprises.
+     * @return hint: it's the whole thing
+     */
     public Iterator iterator() {
         ArrayList<String> stringArrayList = new ArrayList<>();
         if(lines < 0 || theLines == null || theLines.length == 0){

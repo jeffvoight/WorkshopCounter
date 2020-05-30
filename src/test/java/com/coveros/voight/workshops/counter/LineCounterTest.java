@@ -1,37 +1,39 @@
 package com.coveros.voight.workshops.counter;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.util.Iterator;
 
 import static org.mockito.Mockito.when;
 
-
+/**
+ * There's are intentionally corrupt tests in here.
+ */
 public class LineCounterTest {
-    FileContents fc= new FileContents(new File("src/test/resources/twolines.txt"));
     FileContents fc2 = new FileContents(new File("src/test/resources/twolines.txt"));
     FileContents fc3 = new FileContents(new File("src/test/resource/threelines.txt"));
-    LineCounter lc = new LineCounter(fc);
+    LineCounter lc2 = new LineCounter(fc2);
+    LineCounter lc3 = new LineCounter(fc3);
 
     @Test
     public void testCountItems() {
-        Assert.assertEquals(lc.countItems(), 2);
+        Assert.assertEquals(lc2.countItems(), 2);
     }
 
     @Test
     public void testGetName() {
-        Assert.assertEquals(lc.getName(), "twolines.txt");
+        Assert.assertEquals(lc2.getName(), "twolines.txt");
     }
 
     @Test
     public void testCompareTo() {
+        Assert.assertTrue(lc2.compareTo(lc3) > 0); // twolines should be less than threelines
     }
 
     @Test
     public void testGetCount() {
+        Assert.assertEquals(lc2.countItems(), 2);
     }
 
 }
