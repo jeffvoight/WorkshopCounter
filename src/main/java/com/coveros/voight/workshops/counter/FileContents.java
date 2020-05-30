@@ -9,6 +9,11 @@ public class FileContents {
     private final String[] theLines = new String[100000];
     private final String fname;
 
+    /**
+     * This constructor is intentionally written like this for a workshop.
+     * I promise I would never write bugs like this. Except here. I'm clearly doing it here.
+     * @param f
+     */
     public FileContents(File f){
         fname = f.getName();
         int i=0;
@@ -20,9 +25,9 @@ public class FileContents {
                 lines = i;
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("Couldn't find the file!");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("IO Error in file " + e.getMessage());
         }
     }
 
