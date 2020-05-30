@@ -7,8 +7,10 @@ import java.util.Iterator;
 public class FileContents {
     private int lines = -1;
     private final String[] theLines = new String[100000];
+    private final String fname;
 
     public FileContents(File f){
+        fname = f.getName();
         int i=0;
         try {
             BufferedReader buff = new BufferedReader(new FileReader(f));
@@ -44,5 +46,9 @@ public class FileContents {
             stringArrayList.add(theLines[i]);
         }
         return stringArrayList.iterator();
+    }
+
+    public String getName() {
+        return fname;
     }
 }

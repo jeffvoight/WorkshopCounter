@@ -21,4 +21,9 @@ public class ParagraphCounter extends Counter {
         }
         return itemCount;
     }
+
+    @Override
+    public String getName() {
+        return fileContents.getName();
+    }
 }

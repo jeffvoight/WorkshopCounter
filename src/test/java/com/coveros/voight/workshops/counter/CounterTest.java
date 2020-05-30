@@ -22,6 +22,11 @@ public class CounterTest {
         public int countItems() {
             return 1;
         }
+
+        @Override
+        public String getName() {
+            return "GetName";
+        }
     };
 
     @BeforeTest

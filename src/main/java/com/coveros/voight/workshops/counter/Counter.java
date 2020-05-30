@@ -17,4 +17,6 @@ public abstract class Counter {
     public int getCount(){
         return countItems();
     }
+
+    public abstract String getName();
 }

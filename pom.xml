@@ -57,7 +57,7 @@
                         </goals>
                         <configuration>
                             <mainClass>com.coveros.voight.workshops.counter.Main</mainClass>
-                            <commandlineArgs>src/main/resources/taming.txt</commandlineArgs>
+                            <commandlineArgs>src/main/resources/</commandlineArgs>
 
                         </configuration>
                     </execution>

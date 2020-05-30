@@ -21,6 +21,11 @@ public class LineCounter extends Counter implements Comparable {
     }
 
     @Override
+    public String getName() {
+        return fileContents.getName();
+    }
+
+    @Override
     public int compareTo(Object o) {
         Integer cc = ((Counter)o).countItems();
         Integer lc = this.countItems();

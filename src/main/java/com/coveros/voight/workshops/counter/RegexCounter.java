@@ -27,4 +27,9 @@ public class RegexCounter extends Counter {
         }
         return itemCount;
     }
+
+    @Override
+    public String getName() {
+        return fileContents.getName();
+    }
 }
