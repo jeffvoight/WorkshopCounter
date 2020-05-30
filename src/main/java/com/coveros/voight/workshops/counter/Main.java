@@ -24,12 +24,13 @@ public class Main {
             ParagraphCounter p = new ParagraphCounter(fc);
             RegexCounter r = new RegexCounter(fc, Pattern.compile("The", Pattern.CASE_INSENSITIVE));
             System.out.println("* * * * * * * * * * * * * * *");
+            System.out.println(fc.getName());
             System.out.println(l.getCount());
             System.out.println(p.getCount());
             System.out.println(r.getCount());
         }
 
-        Arrays.sort(lineCounterArray);
+        Arrays.sort(lineCounterArray); // Sort by number of lines
 
         for(int i = 0; i < files.length; i++){
             System.out.println(lineCounterArray[i].getName() + " is " + lineCounterArray[i].countItems() + " lines long.");
