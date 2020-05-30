@@ -114,13 +114,11 @@ public class SuiteListenerTest {
             }
 
             @Override
-            public void setParentInjector(Injector injector) {
-
-            }
-
-            @Override
             public List<ITestNGMethod> getAllMethods() {
                 return null;
+            }            @Override
+            public void setParentInjector(Injector injector) {
+
             }
 
             @Override
@@ -142,6 +140,8 @@ public class SuiteListenerTest {
             public Object removeAttribute(String s) {
                 return null;
             }
+
+
         });
     }
 
@@ -245,13 +245,11 @@ public class SuiteListenerTest {
             }
 
             @Override
-            public void setParentInjector(Injector injector) {
-
-            }
-
-            @Override
             public List<ITestNGMethod> getAllMethods() {
                 return null;
+            }            @Override
+            public void setParentInjector(Injector injector) {
+
             }
 
             @Override
@@ -273,6 +271,8 @@ public class SuiteListenerTest {
             public Object removeAttribute(String s) {
                 return null;
             }
+
+
         });
     }
 }

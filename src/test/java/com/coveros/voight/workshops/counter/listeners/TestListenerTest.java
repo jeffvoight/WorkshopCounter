@@ -360,6 +360,11 @@ public class TestListenerTest {
             }
 
             @Override
+            public void setTestName(String s) {
+
+            }
+
+            @Override
             public String getInstanceName() {
                 return null;
             }
@@ -367,11 +372,6 @@ public class TestListenerTest {
             @Override
             public ITestContext getTestContext() {
                 return null;
-            }
-
-            @Override
-            public void setTestName(String s) {
-
             }
 
             @Override
@@ -428,17 +428,17 @@ public class TestListenerTest {
     }
 
     @Test
-    public void testOnTestStart(){
+    public void testOnTestStart() {
         r.onTestStart(getDummyITestResult());
     }
 
     @Test
-    public void testOnTestSuccess(){
+    public void testOnTestSuccess() {
         r.onTestSuccess(getDummyITestResult());
     }
 
     @Test
-    public void testOnFinish(){
+    public void testOnFinish() {
         r.onFinish(new ITestContext() {
             @Override
             public String getName() {
@@ -571,6 +571,7 @@ public class TestListenerTest {
             }
         });
     }
+
     @Test
     public void testIncludedGroups() {
         r.onStart(c);

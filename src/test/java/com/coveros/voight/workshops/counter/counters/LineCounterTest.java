@@ -1,7 +1,6 @@
 package com.coveros.voight.workshops.counter.counters;
 
 import com.coveros.voight.workshops.counter.FileContents;
-import com.coveros.voight.workshops.counter.counters.LineCounter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -1,12 +1,12 @@
 package com.coveros.voight.workshops.counter.counters;
 
-import com.coveros.voight.workshops.counter.counters.Counter;
 import org.mockito.Mockito;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * This tests the Counter class.
@@ -31,7 +31,7 @@ public class CounterTest {
     };
 
     @BeforeTest
-    public void setup(){
+    public void setup() {
         when(c.countItems()).thenReturn(1); // won't work because abstract
         when(c2.countItems()).thenReturn(1);
     }

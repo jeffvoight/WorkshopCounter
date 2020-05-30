@@ -6,15 +6,21 @@ package com.coveros.voight.workshops.counter.counters;
  */
 public abstract class Counter {
 
-    protected int theCount = -1;
+    protected int theCount = -1; // How many items counted
 
+    /**
+     * Count the items in the Counter. This is implementation defined.
+     *
+     * @return int containing the count of items
+     */
     protected abstract int countItems();
 
     /**
      * Gets the count of how many items are found
+     *
      * @return int containing the item count.
      */
-    public int getCount(){
+    public int getCount() {
         return countItems();
     }
 

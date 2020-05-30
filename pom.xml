@@ -52,7 +52,7 @@
                 <version>1.6.0</version>
                 <executions>
                     <execution>
-                        <phase>test</phase>
+                        <phase>install</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>
@@ -74,8 +74,8 @@
                     <suiteXmlFiles>
                         <file>src/test/resources/testng.unit.xml</file>
                     </suiteXmlFiles>
-                    <parallel>classes</parallel>
-                    <threadCount>4</threadCount>
+                    <parallel>methods</parallel>
+                    <threadCount>10</threadCount>
                     <properties>
                         <property>
                             <name>surefire.testng.verbose</name>
