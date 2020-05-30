@@ -17,6 +17,7 @@ public class LineCounter extends Counter implements Comparable {
             it.next();
             itemCount++;
         }
+        this.theCount = itemCount;
         return itemCount;
     }
 
@@ -27,8 +28,8 @@ public class LineCounter extends Counter implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        Integer cc = ((Counter)o).countItems();
-        Integer lc = this.countItems();
+        Integer cc = ((Counter)o).getCount();
+        Integer lc = this.getCount();
         return lc.compareTo(cc);
     }
 }

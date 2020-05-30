@@ -49,6 +49,7 @@ public class CounterTest {
     public void spyTestGetCount() {
         Assert.assertEquals(c2.getCount(), 1);
     }
+
     @Test
     public void overrideTestCountItems() {
         Assert.assertEquals(theCounter.countItems(), 1);
