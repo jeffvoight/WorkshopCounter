@@ -12,7 +12,7 @@ import java.util.Iterator;
 public class FileContents {
     private Logger log = Logger.getLogger(FileContents.class);
 
-    private final String[] theLines = new String[10000];
+    private final String[] theLines = new String[66000];
     private final String fname;
     private int lines = -1;
 
