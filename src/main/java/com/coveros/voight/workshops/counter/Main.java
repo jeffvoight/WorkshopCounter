@@ -15,7 +15,7 @@ public class Main {
 
     public Main(String arg) {
         // run a bunch of times for the profiler
-        for (int x = 0; x < 1; x++) {
+        for (int x = 0; x < 150; x++) {
             String dirName = arg;
             File f = new File(dirName);
             File[] files = f.listFiles(new FilenameFilter() {
