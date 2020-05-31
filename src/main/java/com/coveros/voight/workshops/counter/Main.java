@@ -3,6 +3,7 @@ package com.coveros.voight.workshops.counter;
 import com.coveros.voight.workshops.counter.counters.LineCounter;
 import com.coveros.voight.workshops.counter.counters.ParagraphCounter;
 import com.coveros.voight.workshops.counter.counters.RegexCounter;
+import org.testng.log4testng.Logger;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -10,6 +11,7 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class Main {
+    Logger log = Logger.getLogger(Main.class);
 
     public Main(String arg) {
         // run a bunch of times for the profiler
@@ -29,17 +31,17 @@ public class Main {
                 lineCounterArray[i] = l;
                 ParagraphCounter p = new ParagraphCounter(fc);
                 RegexCounter r = new RegexCounter(fc, Pattern.compile("The", Pattern.CASE_INSENSITIVE));
-                System.out.println("* * * * * * * * * * * * * * *");
-                System.out.println(fc.getName());
-                System.out.println(l.getCount());
-                System.out.println(p.getCount());
-                System.out.println(r.getCount());
+                log.debug("* * * * * * * * * * * * * * *");
+                log.debug(fc.getName());
+                log.debug(l.getCount());
+                log.debug(p.getCount());
+                log.debug(r.getCount());
             }
 
             Arrays.sort(lineCounterArray); // Sort by number of lines
 
             for (int i = 0; i < files.length; i++) {
-                System.out.println(lineCounterArray[i].getName() + " is " + lineCounterArray[i].getCount() + " lines long.");
+                log.info(lineCounterArray[i].getName() + " is " + lineCounterArray[i].getCount() + " lines long.");
             }
         }
 

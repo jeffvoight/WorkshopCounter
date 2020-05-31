@@ -1,5 +1,7 @@
 package com.coveros.voight.workshops.counter;
 
+import org.testng.log4testng.Logger;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,6 +10,8 @@ import java.util.Iterator;
  * This reads and stores all the lines in a file.
  */
 public class FileContents {
+    private Logger log = Logger.getLogger(FileContents.class);
+
     private final String[] theLines = new String[10000];
     private final String fname;
     private int lines = -1;
@@ -31,16 +35,16 @@ public class FileContents {
                 lines = i;
             }
         } catch (FileNotFoundException e) {
-            System.err.println("Couldn't find the file!");
+            log.error("Couldn't find the file!");
         } catch (IOException e) {
-            System.err.println("IO Error in file " + e.getMessage());
+            log.error("IO Error in file " + e.getMessage());
         } finally {
             try {
                 if (buff != null) {
                     buff.close();
                 }
             } catch (IOException ioe) {
-                System.err.println("IOError.");
+                log.error("IOError.");
             }
         }
     }

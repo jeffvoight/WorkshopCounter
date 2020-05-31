@@ -17,12 +17,13 @@
     <properties>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
 
         <!-- SonarQube Properties -->
         <sonar.exclusions></sonar.exclusions>
         <!-- sonar host stored in private settings.xml -->
         <sonar.host.url></sonar.host.url>
-        <sonar.java.source>12</sonar.java.source>
+        <sonar.java.source>${java.version}</sonar.java.source>
         <sonar.sources>pom.xml,src/main/java,src/main/resources</sonar.sources>
         <sonar.tests>src/test/java</sonar.tests>
         <sonar.coverage.exclusions></sonar.coverage.exclusions>
@@ -36,8 +37,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>${sonar.java.source}</source>
-                    <target>${sonar.java.source}</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <showDeprecation>true</showDeprecation>
                     <compilerArgs>
                         <arg>-parameters</arg>
