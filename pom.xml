@@ -22,7 +22,7 @@
         <sonar.exclusions></sonar.exclusions>
         <!-- sonar host stored in private settings.xml -->
         <sonar.host.url></sonar.host.url>
-        <sonar.java.source>1.8</sonar.java.source>
+        <sonar.java.source>12</sonar.java.source>
         <sonar.sources>pom.xml,src/main/java,src/main/resources</sonar.sources>
         <sonar.tests>src/test/java</sonar.tests>
         <sonar.coverage.exclusions></sonar.coverage.exclusions>
@@ -30,7 +30,6 @@
 
     <build>
         <plugins>
-
             <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -47,6 +46,7 @@
             </plugin>
 
             <plugin>
+                <!-- executable Main -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
@@ -59,11 +59,11 @@
                         <configuration>
                             <mainClass>com.coveros.voight.workshops.counter.Main</mainClass>
                             <commandlineArgs>src/main/resources/</commandlineArgs>
-
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
             <!-- Unit Tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -75,7 +75,7 @@
                         <file>src/test/resources/testng.unit.xml</file>
                     </suiteXmlFiles>
                     <parallel>methods</parallel>
-                    <threadCount>10</threadCount>
+                    <threadCount>5</threadCount>
                     <properties>
                         <property>
                             <name>surefire.testng.verbose</name>
@@ -90,8 +90,6 @@
                     </properties>
                 </configuration>
             </plugin>
-
-            <!-- Generate Parallel Cucumber -->
 
             <!-- Cucumber Tests -->
             <plugin>
@@ -165,7 +163,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
@@ -197,7 +194,6 @@
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
@@ -231,7 +227,6 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-
     </dependencies>
 
 </project>
