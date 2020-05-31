@@ -12,7 +12,7 @@ import java.util.Iterator;
 public class FileContents {
     private Logger log = Logger.getLogger(FileContents.class);
 
-    private final String[] theLines = new String[10000];
+    private final ArrayList<String> theLines = new ArrayList<>();
     private final String fname;
     private int lines = -1;
 
@@ -23,30 +23,16 @@ public class FileContents {
      *
      * @param f the File to read
      */
-    public FileContents(File f) {
+    public FileContents(File f) throws IOException {
         fname = f.getName();
         int i = 0;
-        BufferedReader buff = null;
-        try {
-            buff = new BufferedReader(new FileReader(f));
+        BufferedReader buff = new BufferedReader(new FileReader(f));
             while (buff.ready()) {
                 String theLine = buff.readLine();
-                theLines[i++] = theLine;
+                theLines.add(theLine);
                 lines = i;
             }
-        } catch (FileNotFoundException e) {
-            log.error("Couldn't find the file!");
-        } catch (IOException e) {
-            log.error("IO Error in file " + e.getMessage());
-        } finally {
-            try {
-                if (buff != null) {
-                    buff.close();
-                }
-            } catch (IOException ioe) {
-                log.error("IOError.");
-            }
-        }
+        buff.close();
     }
 
     /**
@@ -58,26 +44,7 @@ public class FileContents {
      * @return hint: it's the whole thing
      */
     public Iterator iterator() {
-        ArrayList<String> stringArrayList = new ArrayList<>();
-        if (lines < 0 || theLines == null || theLines.length == 0) {
-            return new Iterator() {
-                @Override
-                public boolean hasNext() {
-                    return false;
-                }
-
-                @Override
-                @SuppressWarnings("squid:S2272")
-                public Object next() {
-                    return null;
-                }
-            };
-        }
-
-        for (int i = 0; i < lines; i++) {
-            stringArrayList.add(theLines[i]);
-        }
-        return stringArrayList.iterator();
+        return theLines.iterator();
     }
 
     /**

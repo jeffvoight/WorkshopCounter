@@ -7,13 +7,14 @@ import org.testng.log4testng.Logger;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class Main {
     Logger log = Logger.getLogger(Main.class);
 
-    public Main(String arg) {
+    public Main(String arg) throws IOException {
         // run a bunch of times for the profiler
         for (int x = 0; x < 150; x++) {
             String dirName = arg;
@@ -48,6 +49,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new Main(args[0]);
+        try {
+            new Main(args[0]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

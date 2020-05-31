@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
  * Counts and contains the number of paragraphs in a FileContents
  */
 public class RegexCounter extends Counter {
-    private final FileContents fileContents;
     private final Pattern pattern;
 
     /**
@@ -22,6 +21,7 @@ public class RegexCounter extends Counter {
     public RegexCounter(FileContents fc, Pattern pattern) {
         this.fileContents = fc;
         this.pattern = pattern;
+        this.theCount = countItems();
     }
 
     /**
@@ -42,15 +42,5 @@ public class RegexCounter extends Counter {
             }
         }
         return itemCount;
-    }
-
-    /**
-     * Gets the name of the file
-     *
-     * @return String containing the name of the file.
-     */
-    @Override
-    public String getName() {
-        return fileContents.getName();
     }
 }

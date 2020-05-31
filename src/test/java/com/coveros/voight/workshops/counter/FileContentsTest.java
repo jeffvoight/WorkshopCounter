@@ -1,22 +1,28 @@
 package com.coveros.voight.workshops.counter;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 
 public class FileContentsTest {
-    FileContents c = new FileContents(new File("src/test/resoures/threelines.txt"));
+    FileContents fc;
 
+    @BeforeClass
+    public void setup() throws IOException {
+        fc = new FileContents(new File("src/test/resoures/threelines.txt"));
+    }
     @Test
     public void testIterator() {
-        Iterator iterator = c.iterator();
+        Iterator iterator = fc.iterator();
         Assert.assertTrue(iterator != null);
     }
 
     @Test
     public void testGetName() {
-        Assert.assertEquals(c.getName(), "threelines.txt");
+        Assert.assertEquals(fc.getName(), "threelines.txt");
     }
 }
