@@ -16,7 +16,7 @@ public class Main {
 
     public Main(String arg) throws IOException {
         // run a bunch of times for the profiler
-        for (int x = 0; x < 150; x++) {
+        for (int x = 0; x < 500; x++) {
             String dirName = arg;
             File f = new File(dirName);
             File[] files = f.listFiles(new FilenameFilter() {
